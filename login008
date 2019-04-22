@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -Y c28su@ubuntu1604-008.student.cs.uwaterloo.ca

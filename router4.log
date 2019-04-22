@@ -1,0 +1,366 @@
+R4 sends INIT
+R4 receives initial CDB
+R4 sends Hello via link 3
+R4 sends Hello via link 4
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 0
+R4 -> R3 nbr link 0
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 0
+
+R4 receives Hello via link 3 from 3
+R4 sends LSPDU sender 4 router_id 4 link_id 3 cost 3 via 3 to 3
+R4 sends LSPDU sender 4 router_id 4 link_id 4 cost 4 via 3 to 3
+R4 receives Hello via link 4 from 5
+R4 sends LSPDU sender 4 router_id 4 link_id 3 cost 3 via 4 to 5
+R4 sends LSPDU sender 4 router_id 4 link_id 4 cost 4 via 4 to 5
+R4 receives from R3 via link id 3 that R3 has a link with id 2 and cost 2
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 0
+R4 -> R3 nbr link 1
+R4 -> R3 link 2 cost 2
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 0
+
+R4 sends LSPDU sender 4 router_id 3 link_id 2 cost 2 via 3 to 3
+R4 sends LSPDU sender 4 router_id 3 link_id 2 cost 2 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R-1, 99999999
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R3 via link id 3 that R3 has a link with id 7 and cost 7
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 0
+R4 -> R3 nbr link 2
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 0
+
+R4 sends LSPDU sender 4 router_id 3 link_id 7 cost 7 via 3 to 3
+R4 sends LSPDU sender 4 router_id 3 link_id 7 cost 7 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R-1, 99999999
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R3 via link id 3 that R3 has a link with id 3 and cost 3
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 0
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 0
+
+R4 sends LSPDU sender 4 router_id 3 link_id 3 cost 3 via 3 to 3
+R4 sends LSPDU sender 4 router_id 3 link_id 3 cost 3 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R-1, 99999999
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R3 via link id 3 that R2 has a link with id 1 and cost 1
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 1
+R4 -> R2 link 1 cost 1
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 0
+
+R4 sends LSPDU sender 4 router_id 2 link_id 1 cost 1 via 3 to 3
+R4 sends LSPDU sender 4 router_id 2 link_id 1 cost 1 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R-1, 99999999
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R3 via link id 3 that R2 has a link with id 2 and cost 2
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 2
+R4 -> R2 link 1 cost 1
+R4 -> R2 link 2 cost 2
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 0
+
+R4 sends LSPDU sender 4 router_id 2 link_id 2 cost 2 via 3 to 3
+R4 sends LSPDU sender 4 router_id 2 link_id 2 cost 2 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R3, 5
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R3 via link id 3 that R2 has a link with id 6 and cost 6
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 3
+R4 -> R2 link 1 cost 1
+R4 -> R2 link 2 cost 2
+R4 -> R2 link 6 cost 6
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 0
+
+R4 sends LSPDU sender 4 router_id 2 link_id 6 cost 6 via 3 to 3
+R4 sends LSPDU sender 4 router_id 2 link_id 6 cost 6 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R3, 5
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R3 via link id 3 that R4 has a link with id 3 and cost 3
+R4 receives from R3 via link id 3 that R4 has a link with id 4 and cost 4
+R4 receives from R5 via link id 4 that R5 has a link with id 4 and cost 4
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 3
+R4 -> R2 link 1 cost 1
+R4 -> R2 link 2 cost 2
+R4 -> R2 link 6 cost 6
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 1
+R4 -> R5 link 4 cost 4
+
+R4 sends LSPDU sender 4 router_id 5 link_id 4 cost 4 via 3 to 3
+R4 sends LSPDU sender 4 router_id 5 link_id 4 cost 4 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R3, 5
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R5 via link id 4 that R5 has a link with id 7 and cost 7
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 3
+R4 -> R2 link 1 cost 1
+R4 -> R2 link 2 cost 2
+R4 -> R2 link 6 cost 6
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 2
+R4 -> R5 link 4 cost 4
+R4 -> R5 link 7 cost 7
+
+R4 sends LSPDU sender 4 router_id 5 link_id 7 cost 7 via 3 to 3
+R4 sends LSPDU sender 4 router_id 5 link_id 7 cost 7 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R3, 5
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R5 via link id 4 that R5 has a link with id 6 and cost 6
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 3
+R4 -> R2 link 1 cost 1
+R4 -> R2 link 2 cost 2
+R4 -> R2 link 6 cost 6
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 3
+R4 -> R5 link 4 cost 4
+R4 -> R5 link 7 cost 7
+R4 -> R5 link 6 cost 6
+
+R4 sends LSPDU sender 4 router_id 5 link_id 6 cost 6 via 3 to 3
+R4 sends LSPDU sender 4 router_id 5 link_id 6 cost 6 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R3, 5
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R5 via link id 4 that R5 has a link with id 5 and cost 5
+
+# Topology DB
+R4 -> R1 nbr link 0
+R4 -> R2 nbr link 3
+R4 -> R2 link 1 cost 1
+R4 -> R2 link 2 cost 2
+R4 -> R2 link 6 cost 6
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 4
+R4 -> R5 link 4 cost 4
+R4 -> R5 link 7 cost 7
+R4 -> R5 link 6 cost 6
+R4 -> R5 link 5 cost 5
+
+R4 sends LSPDU sender 4 router_id 5 link_id 5 cost 5 via 3 to 3
+R4 sends LSPDU sender 4 router_id 5 link_id 5 cost 5 via 4 to 5
+
+# RIB
+R4 -> R1 -> R-1, 99999999
+R4 -> R2 -> R3, 5
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R5 via link id 4 that R3 has a link with id 2 and cost 2
+R4 receives from R3 via link id 3 that R5 has a link with id 4 and cost 4
+R4 receives from R3 via link id 3 that R5 has a link with id 7 and cost 7
+R4 receives from R3 via link id 3 that R5 has a link with id 6 and cost 6
+R4 receives from R3 via link id 3 that R5 has a link with id 5 and cost 5
+R4 receives from R5 via link id 4 that R3 has a link with id 7 and cost 7
+R4 receives from R5 via link id 4 that R3 has a link with id 3 and cost 3
+R4 receives from R3 via link id 3 that R1 has a link with id 1 and cost 1
+
+# Topology DB
+R4 -> R1 nbr link 1
+R4 -> R1 link 1 cost 1
+R4 -> R2 nbr link 3
+R4 -> R2 link 1 cost 1
+R4 -> R2 link 2 cost 2
+R4 -> R2 link 6 cost 6
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 4
+R4 -> R5 link 4 cost 4
+R4 -> R5 link 7 cost 7
+R4 -> R5 link 6 cost 6
+R4 -> R5 link 5 cost 5
+
+R4 sends LSPDU sender 4 router_id 1 link_id 1 cost 1 via 3 to 3
+R4 sends LSPDU sender 4 router_id 1 link_id 1 cost 1 via 4 to 5
+
+# RIB
+R4 -> R1 -> R3, 6
+R4 -> R2 -> R3, 5
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R5 via link id 4 that R2 has a link with id 1 and cost 1
+R4 receives from R5 via link id 4 that R2 has a link with id 2 and cost 2
+R4 receives from R5 via link id 4 that R2 has a link with id 6 and cost 6
+R4 receives from R5 via link id 4 that R4 has a link with id 3 and cost 3
+R4 receives from R5 via link id 4 that R4 has a link with id 4 and cost 4
+R4 receives from R5 via link id 4 that R1 has a link with id 1 and cost 1
+R4 receives from R5 via link id 4 that R1 has a link with id 5 and cost 5
+
+# Topology DB
+R4 -> R1 nbr link 2
+R4 -> R1 link 1 cost 1
+R4 -> R1 link 5 cost 5
+R4 -> R2 nbr link 3
+R4 -> R2 link 1 cost 1
+R4 -> R2 link 2 cost 2
+R4 -> R2 link 6 cost 6
+R4 -> R3 nbr link 3
+R4 -> R3 link 2 cost 2
+R4 -> R3 link 7 cost 7
+R4 -> R3 link 3 cost 3
+R4 -> R4 nbr link 2
+R4 -> R4 link 3 cost 3
+R4 -> R4 link 4 cost 4
+R4 -> R5 nbr link 4
+R4 -> R5 link 4 cost 4
+R4 -> R5 link 7 cost 7
+R4 -> R5 link 6 cost 6
+R4 -> R5 link 5 cost 5
+
+R4 sends LSPDU sender 4 router_id 1 link_id 5 cost 5 via 3 to 3
+R4 sends LSPDU sender 4 router_id 1 link_id 5 cost 5 via 4 to 5
+
+# RIB
+R4 -> R1 -> R3, 6
+R4 -> R2 -> R3, 5
+R4 -> R3 -> R3, 3
+R4 -> R4 -> Local, 0
+R4 -> R5 -> R5, 4
+
+R4 receives from R3 via link id 3 that R1 has a link with id 5 and cost 5
